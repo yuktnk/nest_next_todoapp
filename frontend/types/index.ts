@@ -3,7 +3,7 @@ export type AuthForm = {
   password: string
 }
 
-export type EdittedTask = {
+export type EditedTask = {
   id: number
   title: string
   description?: string | null

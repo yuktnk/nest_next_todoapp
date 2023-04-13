@@ -16,9 +16,12 @@ const queryClient = new QueryClient({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
+  // axiosがクロスサイトリクエストに対応するために必要な設定
+  // サイト間のリクエストが許可されている場合、ブラウザはクッキーを自動的に送信する
   axios.defaults.withCredentials = true
 
   useEffect(() => {
+    // サーバーからCSRFトークンを取得し、axiosの共通ヘッダーに保存する
     const getCsrfToken = async () => {
       const { data } = await axios.get(
         `${process.env.NEXT_PUBLIC_API_URL}/auth/csrf`

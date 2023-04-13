@@ -5,6 +5,7 @@ type Props = {
   title: string
   children: ReactNode
 }
+
 export const Layout: FC<Props> = ({ title = 'Nextjs', children }) => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
