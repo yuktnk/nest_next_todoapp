@@ -65,7 +65,7 @@ export const useMutateTask = () => {
     }
   )
 
-  const deleteTaskMutaion = useMutation(
+  const deleteTaskMutation = useMutation(
     async (id: number) => {
       await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/todo/${id}`)
     },
@@ -89,5 +89,5 @@ export const useMutateTask = () => {
     }
   )
 
-  return { createTaskMutation, updateTaskMutation, deleteTaskMutaion }
+  return { createTaskMutation, updateTaskMutation, deleteTaskMutation }
 }
